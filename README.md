@@ -2,6 +2,12 @@
 
 # About 
 
+    For this project, we are required to make an SBA that fetches data from an external API. I decided to keep my project simple and fun by making an art site that uses the Art Institute of Chicago's API (AIC API - https://api.artic.edu/docs/#introduction). This seemed like a good API to use for this project especially because it has thorough and clear documentation, which should make for a more seamless project in the short timeline available. 
+
+    My plan is to create a homepage where you can see a navigation bar, a search bar below, a filter bar (filter by timeperiod, artist, style, date, etc.) and a grid of art pieces below. As you search or filter, different pieces of art will appear in the display. Each will have the option to see more information on that item, and will have a heart icon that you can click to add that piece to your favorites. 
+
+    There will be a tab in the nav bar for favorites that when clicked will display your favorited items. Since this doesn't have a backend or a user login, at this point, when a user refreshes the page, the favorited items will not persist. 
+
 # Installation 
 
 # Reflection 
@@ -16,6 +22,7 @@
 
 
 ---- Instructions for Assignment ----
+
 # SBA 308A: 
 JavaScript Web Application
 Version 1.0, 08/18/23
@@ -59,9 +66,13 @@ Create your application locally, and initialize a local git repo. Make frequent 
 # Requirements (list)
 - Use the fetch API or Axios to communicate with an external web API. Use the data provided by this API to populate your application’s content and features. (20%)
 
+    Using the Art Institute of Chicago(AIC) API (https://api.artic.edu/docs/#quick-start)
+
 - Create user interaction with the API through a search feature, paginated gallery, or similar. This feature should use GET requests to retrieve associated data.(15%)
 
 - Enable user manipulation of data within the API through the use of POST, PUT, or PATCH requests. Ensure your chosen API supports this feature before beginning.(15%)
+
+    AIC API allows PUT requests 
 
 - Make use of Promises and async/await syntax as appropriate. (15%)
 
