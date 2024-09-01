@@ -2,28 +2,6 @@
 // and the function to create the cards for each of the pieces of art 
 const artCardContainer = document.getElementById("card-container");
 
-let navBarTabs = [
-    { text: "home", class:"", class:"home"},
-    { text: "about", class:"", class:"about" },
-    { text: "favorites", class:"", class:"favorites"},
-
-]
-
-//created a nav element, created a query for the header, 
-// and appended the navBar to the header element 
-let navBar = document.createElement("nav")
-let headerEl = document.getElementById("header")
-headerEl.appendChild(navBar);
-navBar.classList.add("flex-around")
-
-//used forEach to make an <a> element for each tab
-navBarTabs.forEach((link) => {
-    const navTabs = document.createElement("a");
-    navTabs.textContent = link.text;
-    navTabs.classList = link.class
-    navBar.appendChild(navTabs)
-})
-
 
 async function initialLoad(){
     const response = await fetch("https://api.artic.edu/api/v1/artworks")
@@ -79,3 +57,83 @@ async function initialLoad(){
     });
 }
 initialLoad()
+
+//  Nav bar 
+
+let navBarTabs = [
+    { text: "home", class:"", class:"home"},
+    { text: "about", class:"", class:"about" },
+    { text: "favorites", class:"", class:"favorites"},
+]
+
+//created a nav element, created a query for the header, 
+// and appended the navBar to the header element 
+let navBar = document.createElement("nav")
+let headerEl = document.getElementById("header")
+headerEl.appendChild(navBar);
+navBar.classList.add("flex-around")
+
+//used forEach to make an <a> element for each tab
+navBarTabs.forEach((link) => {
+    const navTabs = document.createElement("a");
+    navTabs.textContent = link.text;
+    navTabs.classList = link.class
+    navBar.appendChild(navTabs)
+})
+
+let navTabs = document.querySelectorAll("a")
+
+navBar.addEventListener("click", (event) => {
+    event.preventDefault();
+    if (event.target !== "a"){
+        navTabs.forEach((link) => {
+          let isCurrentEvent = link == event.target;
+          if (link !== event.target) {
+            link.classList.remove("active");
+          }
+          if (isCurrentEvent) {
+            if (link.classList == "active") {
+              link.classList.remove("active"); 
+            } else {
+              link.classList.add("active");
+              let info = link.classList;
+              let otherInfo = Array.from(info);
+              console.log(otherInfo);
+              itemDisplay(otherInfo);
+              
+            } 
+          }
+        });
+    }
+});
+
+function itemDisplay(otherInfo) {
+    let homeDiv = document.getElementById("home");
+    // let homeDivId = homeDiv.id;
+    let homeDivArray = homeDiv.classList
+    let realHomeDivArray = Array.from(homeDivArray)
+    let aboutDiv = document.getElementById("about");
+    // let aboutDivId = aboutDiv.id;
+    let aboutDivArray = aboutDiv.classList
+    let realAboutDivArray = Array.from(aboutDivArray)
+
+    let favoriteDiv = document.getElementById("favorites");
+    let favoriteDivArray = favoriteDiv.classList
+    let realFavoriteDivArray = Array.from(favoriteDivArray)
+
+    if (otherInfo.includes("home") && otherInfo.includes("active")) {
+        homeDiv.classList.remove("default")
+        aboutDiv.classList.add("default");
+        favoriteDiv.classList.add("default");
+    } 
+    if (otherInfo.includes("about") == true && realAboutDivArray.includes("default")) {
+        homeDiv.classList.add("default");
+        aboutDiv.classList.remove("default");
+        favoriteDiv.classList.add("default");
+    } 
+    if (otherInfo.includes("favorite") == true && realFavoriteDivArray.includes("default")) {
+        homeDiv.classList.add("default");
+        aboutDiv.classList.add("default");
+        favoriteDiv.classList.remove("default");
+    }
+  }
