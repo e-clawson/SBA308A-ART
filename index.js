@@ -63,7 +63,7 @@ initialLoad()
 let navBarTabs = [
     { text: "home", class:"", class:"home"},
     { text: "about", class:"", class:"about" },
-    { text: "favorites", class:"", class:"favorites"},
+    { text: "favorites", class:"", class:"favorite"},
 ]
 
 //created a nav element, created a query for the header, 
