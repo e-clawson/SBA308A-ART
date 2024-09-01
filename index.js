@@ -2,6 +2,29 @@
 // and the function to create the cards for each of the pieces of art 
 const artCardContainer = document.getElementById("card-container");
 
+let navBarTabs = [
+    { text: "home", class:"", class:"home"},
+    { text: "about", class:"", class:"about" },
+    { text: "favorites", class:"", class:"favorites"},
+
+]
+
+//created a nav element, created a query for the header, 
+// and appended the navBar to the header element 
+let navBar = document.createElement("nav")
+let headerEl = document.getElementById("header")
+headerEl.appendChild(navBar);
+navBar.classList.add("flex-around")
+
+//used forEach to make an <a> element for each tab
+navBarTabs.forEach((link) => {
+    const navTabs = document.createElement("a");
+    navTabs.textContent = link.text;
+    navTabs.classList = link.class
+    navBar.appendChild(navTabs)
+})
+
+
 async function initialLoad(){
     const response = await fetch("https://api.artic.edu/api/v1/artworks")
     const jsonData = await response.json(); 
