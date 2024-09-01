@@ -1,6 +1,6 @@
 // this file will contain the initial GET request
 // and the function to create the cards for each of the pieces of art 
-const artCards = document.getElementById("art-cards");
+const artCardContainer = document.getElementById("card-container");
 
 async function initialLoad(){
     const response = await fetch("https://api.artic.edu/api/v1/artworks")
@@ -17,7 +17,7 @@ async function initialLoad(){
         console.log(id);
         //img
         let imgId = element.image_id;
-        let lqipImg = element.thumbnail.lqip;
+        // let lqipImg = element.thumbnail.lqip;
         let altText = element.alt_text;
         //artist info
         let artist = element.artist_title;
@@ -30,18 +30,18 @@ async function initialLoad(){
         let placeOfOrg = element.place_of_origin;
         let artType = element.artwork_type_title;
 
+        //creating art cards
+        let artCard = document.createElement("div");
+        artCard.setAttribute("id", id);
+        artCard.setAttribute("class", artistId);
+        artCard.classList.add("card");
+        let cardTitle = document.createElement("h3");
+        cardTitle.innerHTML = title;
+        let cardArtist = document.createElement("p");
+        cardArtist.innerHTML = artist;
 
-        // let title = 
-        // let artistID = 
-        //let title = element.title
-        // let altText = element.alt_text
-        // let img = 
-        // let desc = 
-
-    
-        // breedOption.textContent = breed;
-        // breedOption.setAttribute("id", idValue);
-        // breedSelect.appendChild(breedOption);
+        artCardContainer.appendChild(artCard);
+        artCard.appendChild(cardTitle, cardArtist);
     });
 }
 initialLoad()
