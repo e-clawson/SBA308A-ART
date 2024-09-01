@@ -66,16 +66,16 @@ Create your application locally, and initialize a local git repo. Make frequent 
 # Requirements (list)
 - Use the fetch API or Axios to communicate with an external web API. Use the data provided by this API to populate your application’s content and features. (20%)
 
-    Using the Art Institute of Chicago(AIC) API (https://api.artic.edu/docs/#quick-start)
+    - Using the Art Institute of Chicago(AIC) API (https://api.artic.edu/docs/#quick-start)
 
 - Create user interaction with the API through a search feature, paginated gallery, or similar. This feature should use GET requests to retrieve associated data.(15%)
+    - 
 
 - Enable user manipulation of data within the API through the use of POST, PUT, or PATCH requests. Ensure your chosen API supports this feature before beginning.(15%)
-
-    AIC API allows PUT requests 
+    - AIC API allows PUT requests 
 
 - Make use of Promises and async/await syntax as appropriate. (15%)
-    done in the initialLoad function in index.js (lines 7-60)
+    - done in the initialLoad function in index.js (lines 7-60)
 
 - Organize your JavaScript code into at least three (3) different module files, and import functions and data across files as necessary. (3%)
     1. index.js - js file containting the function for the initial load of art information on cards, and the function for making the navbar work 
@@ -88,9 +88,12 @@ Create your application locally, and initialize a local git repo. Make frequent 
 - Create an engaging user experience through the use of HTML and CSS. (5%)
 
 - Ensure that the program runs without errors (comment out things that do not work, and explain your blockers - you can still receive partial credit). (10%)
+    - currently running without error 
 
 - Commit frequently to the git repository. (5%)
+    - currently at 21 commits 
 
 - Include a README file that contains a description of your application. (2%)
+    - please see above readme 
 
 - Level of effort displayed in creativity, presentation, and user experience. (5%)

@@ -45,11 +45,14 @@ async function initialLoad(){
         cardArtist.innerHTML = artist;
         let cardDate = document.createElement("p");
         cardDate.innerHTML = date;
+        let cardImg = document.createElement("img");
+        cardImg.setAttribute("src",`https://www.artic.edu/iiif/2/${imgId}/full/300,/0/default.jpg`)
         let cardDescription = document.createElement("p");
         cardDescription.innerHTML = artDescription
 
         artCardContainer.appendChild(artCard);
         artCard.appendChild(cardTitle);
+        artCard.appendChild(cardImg);
         artCard.appendChild(cardArtist);
         artCard.appendChild(cardDate);
         artCard.appendChild(cardDescription);
