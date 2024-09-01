@@ -1,5 +1,6 @@
 // this file will contain the initial GET request
 // and the function to create the cards for each of the pieces of art 
+//and the function to change the navbar display
 const artCardContainer = document.getElementById("card-container");
 
 

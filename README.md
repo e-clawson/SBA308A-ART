@@ -75,8 +75,13 @@ Create your application locally, and initialize a local git repo. Make frequent 
     AIC API allows PUT requests 
 
 - Make use of Promises and async/await syntax as appropriate. (15%)
+    done in the initialLoad function in index.js (lines 7-60)
 
 - Organize your JavaScript code into at least three (3) different module files, and import functions and data across files as necessary. (3%)
+    1. index.js - js file containting the function for the initial load of art information on cards, and the function for making the navbar work 
+    2. search.js - file containing the function for the search feature 
+    3. filter.js - file containing the fucntion for the filter feature 
+    4. favorites.js - file containing the function for the favroites feature 
 
 - Ensure the program runs as expected, without any undesired behavior caused by misunderstanding of the JavaScript event loop (such as race conditions, API calls being handled out of order, etc.). (5%)
 
