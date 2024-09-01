@@ -14,7 +14,7 @@ async function initialLoad(){
     console.log(websiteInfo)
     await jsonData.data.forEach(element => {
         let id = element.id;
-        console.log(id);
+        console.log(element);
         //img
         let imgId = element.image_id;
         // let lqipImg = element.thumbnail.lqip;
@@ -29,6 +29,8 @@ async function initialLoad(){
         let date = element.date_display;
         let placeOfOrg = element.place_of_origin;
         let artType = element.artwork_type_title;
+        let artDescription = element.description; 
+      
 
         //creating art cards
         let artCard = document.createElement("div");
@@ -37,11 +39,20 @@ async function initialLoad(){
         artCard.classList.add("card");
         let cardTitle = document.createElement("h3");
         cardTitle.innerHTML = title;
-        let cardArtist = document.createElement("p");
+        let cardArtist = document.createElement("h4");
         cardArtist.innerHTML = artist;
+        let cardDate = document.createElement("p");
+        cardDate.innerHTML = date;
+        let cardDescription = document.createElement("p");
+        cardDescription.innerHTML = artDescription
 
         artCardContainer.appendChild(artCard);
-        artCard.appendChild(cardTitle, cardArtist);
+        artCard.appendChild(cardTitle);
+        artCard.appendChild(cardArtist);
+        artCard.appendChild(cardDate);
+        artCard.appendChild(cardDescription);
+
+     
     });
 }
 initialLoad()
