@@ -6,6 +6,8 @@
     <title>AIC Art Site!</title>
     <link rel="stylesheet" href="styles.css" />
     <script type="text/javascript" src="index.js" defer></script>
+    <script type="text/javascript" src="./search.js" defer></script>
+
 </head>
 
 <body>
@@ -38,18 +40,9 @@
         <!-- Search Bar -->
         <div class="form-container"> 
             <form class="form">
-                <input id="search" type="text" class="input" placeholder="search"/>
-                <button id="clear" class="clear-results">Clear Search Results</button>
+                <input id="input" type="search" placeholder="search" onkeyup="search()">
             </form>
         </div>
-
-        <!-- Search Results -->
-         <!-- adding for now - might just adjust the card display instead -->
-         <div class="results-container"> 
-            <div class="results-cards">
-
-            </div>
-         </div>
 
      <!-- Filter Bar -->
 

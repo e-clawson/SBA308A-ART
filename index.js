@@ -1,22 +1,16 @@
 // this file will contain the initial GET request
 // and the function to create the cards for each of the pieces of art 
 //and the function to change the navbar display
+
 const artCardContainer = document.getElementById("card-container");
 
 
 async function initialLoad(){
     const response = await fetch("https://api.artic.edu/api/v1/artworks")
     const jsonData = await response.json(); 
-    console.log(jsonData) //it is an object 
-    let licenseInfo = jsonData.info.license_text;
-    let licenseLinks = jsonData.info.license_links;
-    let websiteInfo = jsonData.config.website_url;
-    console.log(licenseInfo)
-    console.log(licenseLinks)
-    console.log(websiteInfo)
+
     await jsonData.data.forEach(element => {
         let id = element.id;
-        console.log(element);
         //img
         let imgId = element.image_id;
         // let lqipImg = element.thumbnail.lqip;
@@ -37,10 +31,12 @@ async function initialLoad(){
         //creating art cards
         let artCard = document.createElement("div");
         artCard.setAttribute("id", id);
-        artCard.setAttribute("class", artistId);
+        artCard.setAttribute("class", "artistId");
+        // artCard.setAttribute("style", "");
         artCard.classList.add("card");
         let cardTitle = document.createElement("h3");
         cardTitle.innerHTML = title;
+        cardTitle.setAttribute("class", "card-title");
         let cardArtist = document.createElement("h4");
         cardArtist.innerHTML = artist;
         let cardDate = document.createElement("p");
@@ -56,9 +52,9 @@ async function initialLoad(){
         artCard.appendChild(cardArtist);
         artCard.appendChild(cardDate);
         artCard.appendChild(cardDescription);
-
-     
     });
+    console.log(artCardContainer)
+
 }
 initialLoad()
 
